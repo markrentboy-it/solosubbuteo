@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il subbuteo - Marco play the game</title>
+    <style>
+        :root {
+            --pitch-green: #1b733a;
+            --pitch-lines: #ffffff;
+            --dark-bg: #111111;
+            --card-bg: #1e1e1e;
+            --accent-gold: #f1c40f;
+            --text-light: #f5f5f5;
+            --text-muted: #aaaaaa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(27, 115, 58, 0.85), rgba(17, 17, 17, 1)), url('https://unsplash.com') center/cover;
+            border-bottom: 3px solid var(--pitch-green);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            margin: 15px 0 0 0;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--accent-gold);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: #161616;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #2d2d2d;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--pitch-green);
+        }
+
+        container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: block;
+        }
+
+        section {
+            margin-bottom: 60px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-left: 5px solid var(--pitch-green);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Sezione Squadre */
+        .grid-squadre {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card-squadra {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2d2d2d;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-squadra:hover {
+            transform: translateY(-5px);
+            border-color: var(--pitch-green);
+        }
+
+        .squadra-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #2d2d2d;
+            background-color: #252525;
+        }
+
+        .squadra-inner {
+            padding: 20px;
+        }
+
+        .squadra-ref {
+            font-size: 0.8rem;
+            background-color: var(--pitch-green);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .squadra-nome {
+            margin: 15px 0 5px 0;
+            font-size: 1.4rem;
+        }
+
+        .squadra-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Sezione Tornei */
+        .tornei-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .torneo-item {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-gold);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .torneo-status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status-attivo { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+        .status-concluso { background-color: rgba(149, 165, 166, 0.2); color: #95a5a6; }
+
+        /* Sezione Classifica */
+        .tabella-classifica {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .tabella-classifica th, .tabella-classifica td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .tabella-classifica th {
+            background-color: #161616;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .tabella-classifica tr {
+            border-bottom: 1px solid #2d2d2d;
+        }
+
+        .tabella-classifica tr:last-child {
+            border-bottom: none;
+        }
+
+        .tabella-classifica tr:hover {
+            background-color: #252525;
+        }
+
+        .pos {
+            font-weight: bold;
+            color: var(--pitch-green);
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Il subbuteo</h1>
+        <p>Marco play the game</p>
+    </header>
+
+    <nav>
+        <a href="#collezione">La Collezione</a>
+        <a href="#tornei">Tornei</a>
+        <a href="#classifica">Classifica</a>
+    </nav>
+
+    <container>
+        
+        <!-- SEZIONE COLLEZIONE SQUADRE -->
+        <section id="collezione">
+            <h2>Le Mie Squadre</h2>
+            <div class="grid-squadre">
+                
+                <!-- Squadra 1: Italia -->
+                <div class="card-squadra">
+                    <img class="squadra-img" src="italia.jpg" alt="Subbuteo Italia">
+                    <div class="squadra-inner">
+                        <span class="squadra-ref">Ref. 48</span>
+                        <h3 class="squadra-nome">Italia</h3>
+                        <p class="squadra-info">Versione: HW (Heavyweight) • Classico completo azzurro</p>
+                    </div>
+                </div>
+
+                <!-- Squadra 2: Olanda -->
+                <div class="card-squadra">
+                    <img class="squadra-img" src="olanda.jpg" alt="Subbuteo Olanda">
+                    <div class="squadra-inner">
+                        <span class="squadra-ref">Ref. 12</span>
+                        <h3 class="squadra-nome">Olanda</h3>
+                        <p class="squadra-info">Versione: LW (Lightweight) • Storica maglia arancione</p>
+                    </div>
+                </div>
+
+                <!-- Squadra 3: Camerun -->
+                <div class="card-squadra">
+                    <img class="squadra-img" src="camerun.jpg" alt="Subbuteo Camerun">
+                    <div class="squadra-inner">
+                        <span class="squadra-ref">Ref. 151</span>
+                        <h3 class="squadra-nome">Camerun</h3>
+                        <p class="squadra-info">Versione: Zombie/Rara • Iconici Leoni Indomabili</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEZIONE TORNEI -->
+        <section id="tornei">
+            <h2>Tornei in Corso e Storici</h2>
+            <div class="tornei-list">
+                
+                <div class="torneo-item">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0;">Coppa del Mondo Subbuteo</h3>
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Scontri diretti internazionali nella stanza dei giochi</p>
+                    </div>
+                    <span class="torneo-status status-attivo">In Corso</span>
+                </div>
+
+                <div class="torneo-item">
+                    <div>
+                        <h3 style="margin: 0 0 5px 0;">Coppa Italia Marco 2026</h3>
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">Vincitore: Italia (Ref. 48)</p>
+                    </div>
+                    <span class="torneo-status status-concluso">Concluso</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEZIONE CLASSIFICA -->
+        <section id="classifica">
+            <h2>Classifica Generale</h2>
+            <table class="tabella-classifica">
+                <thead>
+                    <tr>
+                        <th class="pos">Pos</th>
+                        <th>Squadra</th>
+                        <th>Giocate</th>
+                        <th>Punti</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pos">1</td>
+                        <td>Italia (Ref. 48)</td>
+                        <td>4</td>
+                        <td style="font-weight: bold; color: var(--accent-gold);">10</td>
+                    </tr>
+                    <tr>
+                        <td class="pos">2</td>
+                        <td>Olanda (Ref. 12)</td>
+                        <td>4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="pos">3</td>
+
+
+
+
