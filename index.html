@@ -96,7 +96,37 @@
             text-transform: uppercase;
         }
 
-        /* Sezione Squadre */
+        .section-header-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .section-header-box h2 {
+            margin-bottom: 0;
+        }
+
+        .btn-view-all {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view-all:hover {
+            background-color: var(--accent-gold);
+            color: #000;
+        }
+
         .grid-squadre {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -149,7 +179,6 @@
             margin: 0;
         }
 
-        /* Sezione Tornei */
         .tornei-list {
             display: flex;
             flex-direction: column;
@@ -177,7 +206,6 @@
 
         .status-attivo { background-color: rgba(46, 204, 113, 0.2); color: #2ecc71; }
 
-        /* Sezione Ranking */
         .tabella-ranking {
             width: 100%;
             border-collapse: collapse;
@@ -227,45 +255,49 @@
     </header>
 
     <nav>
-        <a href="#collezione">La Collezione</a>
+        <a href="#collezione">Le Mie Squadre</a>
         <a href="#tornei">Tornei</a>
         <a href="#ranking">Ranking</a>
     </nav>
 
     <container>
         
-        <!-- SEZIONE COLLEZIONE SQUADRE -->
+        <!-- SEZIONE SQUADRE IN EVIDENZA -->
         <section id="collezione">
-            <h2>Le Mie Squadre</h2>
+            <div class="section-header-box">
+                <h2>Le Mie Squadre</h2>
+                <a href="collezione.html" class="btn-view-all">Vedi Tutta la Collezione →</a>
+            </div>
+            
             <div class="grid-squadre">
                 
-                <!-- Squadra 1: Italia -->
+                <!-- Squadra Casuale 1 -->
                 <div class="card-squadra">
                     <img class="squadra-img" src="italia.jpg" alt="Subbuteo Italia">
                     <div class="squadra-inner">
-                        <span class="squadra-ref">Ref. 48</span>
-                        <h3 class="squadra-nome">Italia</h3>
-                        <p class="squadra-info">Versione: HW (Heavyweight) • Classico completo azzurro</p>
+                        <span class="squadra-ref">Uscita 1</span>
+                        <h3 class="squadra-nome">Italia 1982</h3>
+                        <p class="squadra-info">Edizione Platinum • Campioni del Mondo</p>
                     </div>
                 </div>
 
-                <!-- Squadra 2: Olanda -->
+                <!-- Squadra Casuale 2 -->
                 <div class="card-squadra">
                     <img class="squadra-img" src="olanda.jpg" alt="Subbuteo Olanda">
                     <div class="squadra-inner">
-                        <span class="squadra-ref">Ref. 12</span>
-                        <h3 class="squadra-nome">Olanda</h3>
-                        <p class="squadra-info">Versione: LW (Lightweight) • Storica maglia arancione</p>
+                        <span class="squadra-ref">Uscita 6</span>
+                        <h3 class="squadra-nome">Olanda 1974</h3>
+                        <p class="squadra-info">Edizione Platinum • L'Arancia Meccanica</p>
                     </div>
                 </div>
 
-                <!-- Squadra 3: Camerun -->
+                <!-- Squadra Casuale 3 -->
                 <div class="card-squadra">
                     <img class="squadra-img" src="camerun.jpg" alt="Subbuteo Camerun">
                     <div class="squadra-inner">
-                        <span class="squadra-ref">Ref. 151</span>
-                        <h3 class="squadra-nome">Camerun</h3>
-                        <p class="squadra-info">Versione: Zombie/Rara • Iconici Leoni Indomabili</p>
+                        <span class="squadra-ref">Uscita 18</span>
+                        <h3 class="squadra-nome">Camerun 1990</h3>
+                        <p class="squadra-info">Edizione Platinum • I Leoni Indomabili di Roger Milla</p>
                     </div>
                 </div>
 
@@ -276,8 +308,6 @@
         <section id="tornei">
             <h2>Tornei in Corso e Storici</h2>
             <div class="tornei-list">
-                
-                <!-- British Home Championship -->
                 <div class="torneo-item">
                     <div>
                         <h3 style="margin: 0 0 5px 0;">British Home Championship</h3>
@@ -285,7 +315,6 @@
                     </div>
                     <span class="torneo-status status-attivo">In Corso</span>
                 </div>
-
             </div>
         </section>
 
@@ -303,28 +332,3 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="pos">1</td>
-                        <td>Italia (Ref. 48)</td>
-                        <td>4</td>
-                        <td style="font-weight: bold; color: var(--accent-gold);">10</td>
-                    </tr>
-                    <tr>
-                        <td class="pos">2</td>
-                        <td>Olanda (Ref. 12)</td>
-                        <td>4</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td class="pos">3</td>
-                        <td>Camerun (Ref. 151)</td>
-                        <td>4</td>
-                        <td>1</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-    </container>
-
-</body>
-</html>

@@ -1,0 +1,180 @@
+### 2. Salva la seconda pagina come `collezione.html`
+Crea un nuovo file vuoto, chiamalo esattamente **`collezione.html`** e inserisci questo codice contenente l'elenco completo delle 80 uscite strutturate a tabella per la consultazione rapida:
+
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutta la Collezione - Solo Subbuteo</title>
+    <style>
+        :root {
+            --pitch-green: #1b733a;
+            --dark-bg: #111111;
+            --card-bg: #1e1e1e;
+            --accent-gold: #f1c40f;
+            --text-light: #f5f5f5;
+            --text-muted: #aaaaaa;
+            --border-color: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(27, 115, 58, 0.9), rgba(17, 17, 17, 1));
+            border-bottom: 2px solid var(--pitch-green);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        .back-nav {
+            max-width: 1000px;
+            margin: 30px auto 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn-back {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+
+        .btn-back:hover {
+            color: var(--accent-gold);
+        }
+
+        container {
+            max-width: 1000px;
+            margin: 20px auto 60px auto;
+            padding: 0 20px;
+            display: block;
+        }
+
+        .table-wrapper {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #161616;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr {
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #242424;
+        }
+
+        .num-uscita {
+            font-weight: bold;
+            color: var(--pitch-green);
+            width: 100px;
+        }
+
+        .data-uscita {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            width: 150px;
+        }
+
+        .accessori {
+            color: #55efc4;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>La Leggenda Platinum Edition</h1>
+        <p>L'opera completa e il piano delle uscite sul panno verde</p>
+    </header>
+
+    <div class="back-nav">
+        <a href="index.html" class="btn-back">← Torna alla Home</a>
+    </div>
+
+    <container>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="num-uscita">Uscita</th>
+                        <th class="data-uscita">Data</th>
+                        <th>Squadra</th>
+                        <th>Contenuto Extra / Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="num-uscita">Uscita 1</td><td class="data-uscita">22 agosto 2018</td><td style="font-weight:600;">Italia 1982</td><td class="accessori">-</td></tr>
+                    <tr><td class="num-uscita">Uscita 2</td><td class="data-uscita">1 settembre 2018</td><td style="font-weight:600;">Argentina 1978</td><td class="accessori">-</td></tr>
+                    <tr><td class="num-uscita">Uscita 3</td><td class="data-uscita">8 settembre 2018</td><td style="font-weight:600;">Spagna 2010</td><td class="accessori">Una porta</td></tr>
+                    <tr><td class="num-uscita">Uscita 4</td><td class="data-uscita">15 settembre 2018</td><td style="font-weight:600;">Brasile 1994</td><td class="accessori">Tre palline</td></tr>
+                    <tr><td class="num-uscita">Uscita 5</td><td class="data-uscita">22 settembre 2018</td><td style="font-weight:600;">Germania Ovest 1972</td><td class="accessori">Tre bandierine</td></tr>
+                    <tr><td class="num-uscita">Uscita 6</td><td class="data-uscita">29 settembre 2018</td><td style="font-weight:600;">Olanda 1974</td><td class="accessori">Una porta</td></tr>
+                    <tr><td class="num-uscita">Uscita 7</td><td class="data-uscita">6 ottobre 2018</td><td style="font-weight:600;">Uruguay 1950</td><td class="accessori">Tre bandierine</td></tr>
+                    <tr><td class="num-uscita">Uscita 8</td><td class="data-uscita">13 ottobre 2018</td><td style="font-weight:600;">Inghilterra 1966</td><td class="accessori">Arbitri</td></tr>
+                    <tr><td class="num-uscita">Uscita 9</td><td class="data-uscita">20 ottobre 2018</td><td style="font-weight:600;">Argentina 1986</td><td class="accessori">Una panchina</td></tr>
+                    <tr><td class="num-uscita">Uscita 10</td><td class="data-uscita">27 ottobre 2018</td><td style="font-weight:600;">URSS 1966</td><td class="accessori">Panchinari blu</td></tr>
+                    <tr><td class="num-uscita">Uscita 11</td><td class="data-uscita">3 novembre 2018</td><td style="font-weight:600;">Portogallo 2006</td><td class="accessori">Una panchina</td></tr>
+                    <tr><td class="num-uscita">Uscita 12</td><td class="data-uscita">10 novembre 2018</td><td style="font-weight:600;">Panama 2018</td><td class="accessori">Panchinari rossi</td></tr>
+                    <tr><td class="num-uscita">Uscita 13</td><td class="data-uscita">17 novembre 2018</td><td style="font-weight:600;">Cecoslovacchia 1962</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 14</td><td class="data-uscita">24 novembre 2018</td><td style="font-weight:600;">Nigeria 2018</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 15</td><td class="data-uscita">1 dicembre 2018</td><td style="font-weight:600;">Italia 2006</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 16</td><td class="data-uscita">8 dicembre 2018</td><td style="font-weight:600;">Corea del Nord</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 17</td><td class="data-uscita">15 dicembre 2018</td><td style="font-weight:600;">Cile 1962</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 18</td><td class="data-uscita">22 dicembre 2018</td><td style="font-weight:600;">Camerun 1990</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 19</td><td class="data-uscita">29 dicembre 2018</td><td style="font-weight:600;">Islanda 2018</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 20</td><td class="data-uscita">5 gennaio 2019</td><td style="font-weight:600;">Ungheria 1938</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 21</td><td class="data-uscita">12 gennaio 2019</td><td style="font-weight:600;">Portogallo 2018</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 22</td><td class="data-uscita">19 gennaio 2019</td><td style="font-weight:600;">Irlanda 1990</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 23</td><td class="data-uscita">26 gennaio 2019</td><td style="font-weight:600;">Austria 1954</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 24</td><td class="data-uscita">2 febbraio 2019</td><td style="font-weight:600;">Brasile 2018</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 25</td><td class="data-uscita">9 febbraio 2019</td><td style="font-weight:600;">Svezia 1954</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 26</td><td class="data-uscita">16 febbraio 2019</td><td style="font-weight:600;">Argentina 2018</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 27</td><td class="data-uscita">23 febbraio 2019</td><td style="font-weight:600;">Costa Rica 2014</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
+                    <tr><td class="num-uscita">Uscita 28</td><td class="data-uscita">2 marzo 2019</td><td style="font-weight:600;">Inghilterra 2018</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
