@@ -1,7 +1,3 @@
-### 2. Salva la seconda pagina come `collezione.html`
-Crea un nuovo file vuoto, chiamalo esattamente **`collezione.html`** e inserisci questo codice contenente l'elenco completo delle 80 uscite strutturate a tabella per la consultazione rapida:
-
-```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -41,7 +37,7 @@ Crea un nuovo file vuoto, chiamalo esattamente **`collezione.html`** e inserisci
         }
 
         .back-nav {
-            max-width: 1000px;
+            max-width: 600px;
             margin: 30px auto 0 auto;
             padding: 0 20px;
         }
@@ -62,7 +58,7 @@ Crea un nuovo file vuoto, chiamalo esattamente **`collezione.html`** e inserisci
         }
 
         container {
-            max-width: 1000px;
+            max-width: 600px;
             margin: 20px auto 60px auto;
             padding: 0 20px;
             display: block;
@@ -82,9 +78,9 @@ Crea un nuovo file vuoto, chiamalo esattamente **`collezione.html`** e inserisci
         }
 
         th, td {
-            padding: 14px 18px;
+            padding: 14px 20px;
             text-align: left;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
         }
 
         th {
@@ -108,30 +104,13 @@ Crea un nuovo file vuoto, chiamalo esattamente **`collezione.html`** e inserisci
         tr:hover {
             background-color: #242424;
         }
-
-        .num-uscita {
-            font-weight: bold;
-            color: var(--pitch-green);
-            width: 100px;
-        }
-
-        .data-uscita {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            width: 150px;
-        }
-
-        .accessori {
-            color: #55efc4;
-            font-size: 0.85rem;
-        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>La Leggenda Platinum Edition</h1>
-        <p>L'opera completa e il piano delle uscite sul panno verde</p>
+        <p>L'opera completa delle squadre sul panno verde</p>
     </header>
 
     <div class="back-nav">
@@ -143,38 +122,94 @@ Crea un nuovo file vuoto, chiamalo esattamente **`collezione.html`** e inserisci
             <table>
                 <thead>
                     <tr>
-                        <th class="num-uscita">Uscita</th>
-                        <th class="data-uscita">Data</th>
-                        <th>Squadra</th>
-                        <th>Contenuto Extra / Note</th>
+                        <th>Nome Squadra</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td class="num-uscita">Uscita 1</td><td class="data-uscita">22 agosto 2018</td><td style="font-weight:600;">Italia 1982</td><td class="accessori">-</td></tr>
-                    <tr><td class="num-uscita">Uscita 2</td><td class="data-uscita">1 settembre 2018</td><td style="font-weight:600;">Argentina 1978</td><td class="accessori">-</td></tr>
-                    <tr><td class="num-uscita">Uscita 3</td><td class="data-uscita">8 settembre 2018</td><td style="font-weight:600;">Spagna 2010</td><td class="accessori">Una porta</td></tr>
-                    <tr><td class="num-uscita">Uscita 4</td><td class="data-uscita">15 settembre 2018</td><td style="font-weight:600;">Brasile 1994</td><td class="accessori">Tre palline</td></tr>
-                    <tr><td class="num-uscita">Uscita 5</td><td class="data-uscita">22 settembre 2018</td><td style="font-weight:600;">Germania Ovest 1972</td><td class="accessori">Tre bandierine</td></tr>
-                    <tr><td class="num-uscita">Uscita 6</td><td class="data-uscita">29 settembre 2018</td><td style="font-weight:600;">Olanda 1974</td><td class="accessori">Una porta</td></tr>
-                    <tr><td class="num-uscita">Uscita 7</td><td class="data-uscita">6 ottobre 2018</td><td style="font-weight:600;">Uruguay 1950</td><td class="accessori">Tre bandierine</td></tr>
-                    <tr><td class="num-uscita">Uscita 8</td><td class="data-uscita">13 ottobre 2018</td><td style="font-weight:600;">Inghilterra 1966</td><td class="accessori">Arbitri</td></tr>
-                    <tr><td class="num-uscita">Uscita 9</td><td class="data-uscita">20 ottobre 2018</td><td style="font-weight:600;">Argentina 1986</td><td class="accessori">Una panchina</td></tr>
-                    <tr><td class="num-uscita">Uscita 10</td><td class="data-uscita">27 ottobre 2018</td><td style="font-weight:600;">URSS 1966</td><td class="accessori">Panchinari blu</td></tr>
-                    <tr><td class="num-uscita">Uscita 11</td><td class="data-uscita">3 novembre 2018</td><td style="font-weight:600;">Portogallo 2006</td><td class="accessori">Una panchina</td></tr>
-                    <tr><td class="num-uscita">Uscita 12</td><td class="data-uscita">10 novembre 2018</td><td style="font-weight:600;">Panama 2018</td><td class="accessori">Panchinari rossi</td></tr>
-                    <tr><td class="num-uscita">Uscita 13</td><td class="data-uscita">17 novembre 2018</td><td style="font-weight:600;">Cecoslovacchia 1962</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 14</td><td class="data-uscita">24 novembre 2018</td><td style="font-weight:600;">Nigeria 2018</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 15</td><td class="data-uscita">1 dicembre 2018</td><td style="font-weight:600;">Italia 2006</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 16</td><td class="data-uscita">8 dicembre 2018</td><td style="font-weight:600;">Corea del Nord</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 17</td><td class="data-uscita">15 dicembre 2018</td><td style="font-weight:600;">Cile 1962</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 18</td><td class="data-uscita">22 dicembre 2018</td><td style="font-weight:600;">Camerun 1990</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 19</td><td class="data-uscita">29 dicembre 2018</td><td style="font-weight:600;">Islanda 2018</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 20</td><td class="data-uscita">5 gennaio 2019</td><td style="font-weight:600;">Ungheria 1938</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 21</td><td class="data-uscita">12 gennaio 2019</td><td style="font-weight:600;">Portogallo 2018</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 22</td><td class="data-uscita">19 gennaio 2019</td><td style="font-weight:600;">Irlanda 1990</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 23</td><td class="data-uscita">26 gennaio 2019</td><td style="font-weight:600;">Austria 1954</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 24</td><td class="data-uscita">2 febbraio 2019</td><td style="font-weight:600;">Brasile 2018</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 25</td><td class="data-uscita">9 febbraio 2019</td><td style="font-weight:600;">Svezia 1954</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 26</td><td class="data-uscita">16 febbraio 2019</td><td style="font-weight:600;">Argentina 2018</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 27</td><td class="data-uscita">23 febbraio 2019</td><td style="font-weight:600;">Costa Rica 2014</td><td class="accessori">Steccato chiuso + colonna lat.</td></tr>
-                    <tr><td class="num-uscita">Uscita 28</td><td class="data-uscita">2 marzo 2019</td><td style="font-weight:600;">Inghilterra 2018</td><td class="accessori">Steccato aperto + colonna lat.</td></tr>
+                    <tr><td>Italia 1982</td></tr>
+                    <tr><td>Argentina 1978</td></tr>
+                    <tr><td>Spagna 2010</td></tr>
+                    <tr><td>Brasile 1994</td></tr>
+                    <tr><td>Germania Ovest 1972</td></tr>
+                    <tr><td>Olanda 1974</td></tr>
+                    <tr><td>Uruguay 1950</td></tr>
+                    <tr><td>Inghilterra 1966</td></tr>
+                    <tr><td>Argentina 1986</td></tr>
+                    <tr><td>URSS 1966</td></tr>
+                    <tr><td>Portogallo 2006</td></tr>
+                    <tr><td>Panama 2018</td></tr>
+                    <tr><td>Cecoslovacchia 1962</td></tr>
+                    <tr><td>Nigeria 2018</td></tr>
+                    <tr><td>Italia 2006</td></tr>
+                    <tr><td>Corea del Nord</td></tr>
+                    <tr><td>Cile 1962</td></tr>
+                    <tr><td>Camerun 1990</td></tr>
+                    <tr><td>Islanda 2018</td></tr>
+                    <tr><td>Ungheria 1938</td></tr>
+                    <tr><td>Portogallo 2018</td></tr>
+                    <tr><td>Irlanda 1990</td></tr>
+                    <tr><td>Austria 1954</td></tr>
+                    <tr><td>Brasile 2018</td></tr>
+                    <tr><td>Svezia 1954</td></tr>
+                    <tr><td>Argentina 2018</td></tr>
+                    <tr><td>Costa Rica 2014</td></tr>
+                    <tr><td>Inghilterra 2018</td></tr>
+                    <tr><td>Spagna 1950</td></tr>
+                    <tr><td>USA 2002</td></tr>
+                    <tr><td>Paraguay 2010</td></tr>
+                    <tr><td>Messico 1970</td></tr>
+                    <tr><td>Croazia 2018</td></tr>
+                    <tr><td>Polonia 1982</td></tr>
+                    <tr><td>Giappone 2012</td></tr>
+                    <tr><td>Uruguay 2018</td></tr>
+                    <tr><td>Togo 2006</td></tr>
+                    <tr><td>Olanda 2010</td></tr>
+                    <tr><td>Jugoslavia 1962</td></tr>
+                    <tr><td>Spagna 2018</td></tr>
+                    <tr><td>Galles 2016</td></tr>
+                    <tr><td>Trinidad e Tobago 2006</td></tr>
+                    <tr><td>Cuba 1938</td></tr>
+                    <tr><td>Egitto 2018</td></tr>
+                    <tr><td>Senegal 2002</td></tr>
+                    <tr><td>Colombia 2014</td></tr>
+                    <tr><td>Irlanda del Nord 2016</td></tr>
+                    <tr><td>Inghilterra 1990</td></tr>
+                    <tr><td>Olanda 1998</td></tr>
+                    <tr><td>Emirati Arabi Uniti 1990</td></tr>
+                    <tr><td>Algeria 1982</td></tr>
+                    <tr><td>Spagna 1994</td></tr>
+                    <tr><td>Corea del Sud 2018</td></tr>
+                    <tr><td>Ecuador 2006</td></tr>
+                    <tr><td>Svizzera 1938</td></tr>
+                    <tr><td>Giamaica 1998</td></tr>
+                    <tr><td>Iran 2018</td></tr>
+                    <tr><td>Serbia 2018</td></tr>
+                    <tr><td>Messico 1930</td></tr>
+                    <tr><td>Grecia 2014</td></tr>
+                    <tr><td>Marocco 2018</td></tr>
+                    <tr><td>El Salvador 1982</td></tr>
+                    <tr><td>Slovacchia 2016</td></tr>
+                    <tr><td>Romania 1990</td></tr>
+                    <tr><td>Ghana 2010</td></tr>
+                    <tr><td>Brasile 2019</td></tr>
+                    <tr><td>Scozia 1990</td></tr>
+                    <tr><td>Turchia 2008</td></tr>
+                    <tr><td>Sudafrica 2010</td></tr>
+                    <tr><td>Peru' 1975</td></tr>
+                    <tr><td>Danimarca 2018</td></tr>
+                    <tr><td>Costa d'Avorio 2015</td></tr>
+                    <tr><td>Bulgaria 1986</td></tr>
+                    <tr><td>Tunisia 2018</td></tr>
+                    <tr><td>Slovenia 2002</td></tr>
+                    <tr><td>Norvegia 1998</td></tr>
+                    <tr><td>Arabia Saudita 2018</td></tr>
+                    <tr><td>Germania Est 1974</td></tr>
+                    <tr><td>Australia 2018</td></tr>
+                    <tr><td>Regno Unito 2012</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </container>
+
+</body>
+</html>
