@@ -4,143 +4,337 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solo Subbuteo | Il Portale del Calcio in Miniatura</title>
-    <!-- Tailwind CSS per una grafica moderna e veloce -->
-    <script src="https://jsdelivr.net"></script>
-    <!-- Font Awesome per le icone -->
+    <!-- Font Awesome per le icone dei menu e delle sezioni -->
     <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        /* STILI DI BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER & NAVIGAZIONE */
+        header {
+            background-color: #065f46;
+            color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 15px;
+        }
+        @media (min-width: 768px) {
+            .header-container {
+                flex-direction: row;
+            }
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .logo i {
+            background-color: #ffffff;
+            color: #065f46;
+            padding: 8px 10px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+        }
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            tracking-wider: 0.05em;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #6ee7b7;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(to bottom, #065f46, #022c22);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #d1fae5;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-style: italic;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-white {
+            background-color: #ffffff;
+            color: #064e3b;
+        }
+        .btn-white:hover {
+            background-color: #e2e8f0;
+        }
+        .btn-green {
+            background-color: #059669;
+            color: #ffffff;
+            border: 1px solid #10b981;
+        }
+        .btn-green:hover {
+            background-color: #047857;
+        }
+
+        /* ADSENSE SPACES */
+        .adsense-space {
+            background-color: #e5e7eb;
+            border: 1px dashed #9ca3af;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #6b7280;
+            border-radius: 4px;
+            margin: 30px auto;
+            max-width: 900px;
+        }
+
+        /* GRIGLIA CONTENUTI */
+        main {
+            flex-grow: 1;
+            padding-bottom: 40px;
+        }
+        .grid {
+            display: grid;
+            grid-template-cols: 1fr;
+            gap: 30px;
+        }
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-cols: 1fr 1fr;
+            }
+        }
+
+        /* SCHEDE SEZIONI (CARDS) */
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #059669;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .card-body {
+            padding: 25px;
+        }
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #065f46;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+        .card ul {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+        .card ul li {
+            margin-bottom: 8px;
+            color: #374151;
+        }
+        .card ul li i {
+            color: #059669;
+            margin-right: 8px;
+        }
+        .badge-box {
+            background-color: #ecfdf5;
+            border-left: 4px solid #059669;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #374151;
+        }
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            background-color: #f3f4f6;
+            color: #4b5563;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        .card-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 10px;
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        .status-live {
+            background-color: #fef3c7;
+            color: #92400e;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+        }
+        .card-footer {
+            padding: 0 25px 25px 25px;
+        }
+        .btn-link {
+            display: block;
+            text-align: center;
+            background-color: #f0fdf4;
+            color: #065f46;
+            font-weight: bold;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .btn-link:hover {
+            background-color: #dcfce7;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+            border-top: 1px solid #1f2937;
+        }
+        footer p {
+            margin-bottom: 8px;
+        }
+        footer strong {
+            color: #ffffff;
+        }
+        footer .disclaimer {
+            font-size: 0.75rem;
+            color: #4b5563;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-screen justify-between">
+<body>
 
     <!-- HEADER / NAVIGAZIONE -->
-    <header class="bg-emerald-800 text-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <a href="index.html" class="flex items-center gap-2">
-                <i class="fa-solid px-2 py-1.5 bg-white text-emerald-800 rounded-full fa-circle-play text-xl"></i>
-                <span class="text-2xl font-bold tracking-wider uppercase">Solo Subbuteo</span>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-circle-play"></i>
+                <span>Solo Subbuteo</span>
             </a>
-            <nav class="flex flex-wrap justify-center gap-6 font-medium">
-                <a href="#database" class="hover:text-emerald-300 transition">Database Squadre</a>
-                <a href="#storia" class="hover:text-emerald-300 transition">Storia</a>
-                <a href="#guide" class="hover:text-emerald-300 transition">Guide & Tutorial</a>
-                <a href="#solosubbuteo" class="hover:text-emerald-300 transition">Il Mio Spazio</a>
+            <nav>
+                <a href="#database">Database Squadre</a>
+                <a href="#storia">Storia</a>
+                <a href="#guide">Guide & Tutorial</a>
+                <a href="#solosubbuteo">Il Mio Spazio</a>
             </nav>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="bg-gradient-to-b from-emerald-800 to-emerald-950 text-white text-center py-16 px-4">
-        <div class="max-w-3xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-wide">Il panno verde non passa mai di moda</h1>
-            <p class="text-lg md:text-xl text-emerald-100 mb-8 italic">“In verità quel luogo mi spaventava, e il calcio, la mia consolazione dell'infanzia, la mia coperta di Linus, fu un modo per far fronte a tutto questo.”</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#database" class="bg-white text-emerald-900 font-bold px-6 py-3 rounded shadow hover:bg-emerald-100 transition">Esplora il Database</a>
-                <a href="#guide" class="bg-emerald-600 text-white font-bold px-6 py-3 rounded shadow border border-emerald-500 hover:bg-emerald-700 transition">Impara a Giocare</a>
+    <section class="hero">
+        <div class="container">
+            <h1>Il panno verde non passa mai di moda</h1>
+            <p>“In verità quel luogo mi spaventava, e il calcio, la mia consolazione dell'infanzia, la mia coperta di Linus, fu un modo per far fronte a tutto questo.”</p>
+            <div class="hero-buttons">
+                <a href="#database" class="btn btn-white">Esplora il Database</a>
+                <a href="#guide" class="btn btn-green">Impara a Giocare</a>
             </div>
         </div>
     </section>
 
-    <!-- BANNER ADSENSE TOP (Esempio di posizionamento remunerativo) -->
-    <div class="container mx-auto px-4 my-8 text-center">
-        <div class="bg-gray-200 border border-dashed border-gray-400 p-4 rounded text-xs text-gray-500 max-w-4xl mx-auto">
-            <!-- Spazio Pubblicità AdSense (Responsive Horizontal) -->
-            <span>Spazio Pubblicitario - Google AdSense</span>
+    <!-- BANNER ADSENSE SUPERIORE -->
+    <div class="container">
+        <div class="adsense-space">
+            <span>Spazio Pubblicitario - Google AdSense (Banner Orizzontale)</span>
         </div>
     </div>
 
-    <!-- MAIN CONTENT: LE 4 SEZIONI -->
-    <main class="container mx-auto px-4 py-6 max-w-6xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- CONTENUTO PRINCIPALE (LE 4 SEZIONI) -->
+    <main class="container">
+        <div class="grid">
             
             <!-- SEZIONE 1: DATABASE SQUADRE -->
-            <section id="database" class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between border-t-4 border-emerald-600">
-                <div class="p-6">
-                    <div class="flex items-center gap-3 mb-4 text-emerald-800">
-                        <i class="fa-solid fa-database text-2xl"></i>
-                        <h2 class="text-2xl font-bold uppercase tracking-tight">Database Squadre</h2>
+            <div id="database" class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <i class="fa-solid fa-database"></i>
+                        <h2>Database Squadre</h2>
                     </div>
-                    <p class="text-gray-600 mb-4">Il catalogo completo delle squadre storiche, edizioni speciali e repliche moderne. Cerca per codice catalogo, anno o colori sociali per i tuoi studi sul collezionismo.</p>
-                    <ul class="text-sm space-y-2 text-gray-700 mb-4">
-                        <li><i class="fa-solid fa-angle-right text-emerald-600 mr-2"></i><strong>Italia 1982</strong> (Edizione Platinum • Campioni del Mondo)</li>
-                        <li><i class="fa-solid fa-angle-right text-emerald-600 mr-2"></i><strong>Olanda 1974</strong> (Edizione Platinum • Arancia Meccanica)</li>
-                        <li><i class="fa-solid fa-angle-right text-emerald-600 mr-2"></i><strong>Camerun 1990</strong> (Edizione Platinum • I Leoni Indomabili)</li>
-                    </ul>
-                </div>
-                <div class="p-6 pt-0">
-                    <a href="#" class="block text-center bg-emerald-50 text-emerald-800 font-bold py-2 rounded hover:bg-emerald-100 transition">Vedi Tutta la Collezione &rarr;</a>
-                </div>
-            </section>
-
-            <!-- SEZIONE 2: STORIA DEL SUBBUTEO -->
-            <section id="storia" class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between border-t-4 border-emerald-600">
-                <div class="p-6">
-                    <div class="flex items-center gap-3 mb-4 text-emerald-800">
-                        <i class="fa-solid fa-book text-2xl"></i>
-                        <h2 class="text-2xl font-bold uppercase tracking-tight">Storia del Subbuteo</h2>
-                    </div>
-                    <p class="text-gray-600 mb-4">Dalle intuizioni del fondatore Peter Adolph nel 1947 fino all'età d'oro degli anni '70 e '80. Rivivi l'evoluzione dei materiali e l'impatto culturale di questo gioco mitico.</p>
-                    <div class="bg-emerald-50 border-l-4 border-emerald-600 p-3 text-sm italic text-gray-700">
-                        Curiosità: Lo sapevi che il nome originale doveva essere "The Hobby" ma venne rifiutato dall'ufficio brevetti?
-                    </div>
-                </div>
-                <div class="p-6 pt-0 mt-4">
-                    <a href="#" class="block text-center bg-emerald-50 text-emerald-800 font-bold py-2 rounded hover:bg-emerald-100 transition">Leggi la Storia &rarr;</a>
-                </div>
-            </section>
-
-            <!-- SEZIONE 3: GUIDE & TUTORIAL -->
-            <section id="guide" class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between border-t-4 border-emerald-600">
-                <div class="p-6">
-                    <div class="flex items-center gap-3 mb-4 text-emerald-800">
-                        <i class="fa-solid fa-screwdriver-wrench text-2xl"></i>
-                        <h2 class="text-2xl font-bold uppercase tracking-tight">Guide & Tutorial</h2>
-                    </div>
-                    <p class="text-gray-600 mb-4">Sei un neofita o vuoi migliorare il tuo "bassetto"? Scopri i regolamenti del gioco tradizionale e del Calcio Tavolo, i trucchi per la manutenzione e la lucidatura delle basi.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-gray-100 text-gray-700 text-xs font-semibold px-2.5 py-1 rounded">Regolamento Fixted</span>
-                        <span class="bg-gray-100 text-gray-700 text-xs font-semibold px-2.5 py-1 rounded">Lucidatura Basi</span>
-                        <span class="bg-gray-100 text-gray-700 text-xs font-semibold px-2.5 py-1 rounded">Tattica Difensiva</span>
-                    </div>
-                </div>
-                <div class="p-6 pt-0">
-                    <a href="#" class="block text-center bg-emerald-50 text-emerald-800 font-bold py-2 rounded hover:bg-emerald-100 transition">Sfoglia i Tutorial &rarr;</a>
-                </div>
-            </section>
-
-            <!-- SEZIONE 4: SOLO SUBBUTEO (IL BLOG PERSONALE) -->
-            <section id="solosubbuteo" class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between border-t-4 border-emerald-600">
-                <div class="p-6">
-                    <div class="flex items-center gap-3 mb-4 text-emerald-800">
-                        <i class="fa-solid fa-trophy text-2xl"></i>
-                        <h2 class="text-2xl font-bold uppercase tracking-tight">Solo Subbuteo (I Miei Tornei)</h2>
-                    </div>
-                    <p class="text-gray-600 mb-4">L'anima del vecchio blog. Segui le cronache dei miei campionati domestici sul panno verde, i risultati in tempo reale e il ranking interno delle mie squadre preferite.</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-2 text-sm text-gray-500">
-                        <span><i class="fa-solid fa-gamepad mr-1"></i> In corso: British Home Championship</span>
-                        <span class="bg-amber-100 text-amber-800 text-xs px-2 py-0.5 font-bold rounded-full">Live</span>
-                    </div>
-                </div>
-                <div class="p-6 pt-0">
-                    <a href="#" class="block text-center bg-emerald-50 text-emerald-800 font-bold py-2 rounded hover:bg-emerald-100 transition">Entra nel Diario &rarr;</a>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <!-- BANNER ADSENSE BOTTOM (Secondo punto strategico prima del footer) -->
-    <div class="container mx-auto px-4 my-8 text-center">
-        <div class="bg-gray-200 border border-dashed border-gray-400 p-4 rounded text-xs text-gray-500 max-w-4xl mx-auto">
-            <span>Spazio Pubblicitario - Google AdSense (In-Feed / Matrice)</span>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-400 text-sm py-8 border-t border-gray-800">
-        <div class="container mx-auto px-4 text-center">
-            <p class="mb-2">&copy; 2026 <strong>Solo Subbuteo</strong>. Tutti i diritti riservati.</p>
-            <p class="text-xs text-gray-600">Questo portale è un progetto amatoriale e indipendente di appassionati di Subbuteo e non è affiliato ai titolari del marchio ufficiale.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <p>Il catalogo completo delle squadre storiche, edizioni speciali e repliche moderne. Cerca per codice catalogo, anno o colori sociali per i tuoi studi sul collezionismo.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-angle-right"></i><strong>Italia 1982</strong> (Edizione Platinum • Campioni del Mondo)</li>
+                        <li><i class="fa-solid fa-angle-right"></i><strong>Olanda 1974</strong> (Edizione Platinum • Arancia Meccanica)</li>
+Usa il codice con cautela.Camerun 1990 (Edizione Platinum • I Leoni Indomabili)Vedi Tutta la Collezione →Storia del SubbuteoDalle intuizioni del fondatore Peter Adolph nel 1947 fino all'età d'oro degli anni '70 e '80. Rivivi l'evoluzione dei materiali e l'impatto culturale di questo gioco mitico.Curiosità: Lo sapevi che il nome originale doveva essere "The Hobby" ma venne rifiutato dall'ufficio brevetti?Leggi la Storia →Guide & TutorialSei un neofita o vuoi migliorare il tuo "bassetto"? Scopri i regolamenti del gioco tradizionale e del Calcio Tavolo, i trucchi per la manutenzione e la lucidatura delle basi.Regolamento FixtedLucidatura BasiTattica DifensivaSfoglia i Tutorial →Solo Subbuteo (I Miei Tornei)L'anima del vecchio blog. Segui le cronache dei miei campionati domestici sul panno verde, i risultati in tempo reale e il ranking interno delle mie squadre preferite. In corso: British Home ChampionshipLiveEntra nel Diario →Spazio Pubblicitario - Google AdSense (Banner inferiore per Articoli)© 2026 Solo Subbuteo. Tutti i diritti riservati.Questo portale è un progetto amatoriale e indipendente di appassionati di Subbuteo e non è affiliato ai titolari del marchio ufficiale.
