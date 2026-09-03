@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coppa del Baltico  | Solo Subbuteo</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #10b981;
+            --accent-hover: #059669;
+            --border-color: #334155;
+            --group-a: #ef4444;
+            --group-b: #3b82f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .header-title span {
+            color: var(--accent);
+        }
+
+        .nav-back {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .badge-live {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            font-weight: 700;
+        }
+
+        .grid-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .group-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+        }
+
+        .group-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .group-card.a h3 { color: var(--group-a); }
+        .group-card.b h3 { color: var(--group-b); }
+
+        .group-card .meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .team-list {
+            list-style: none;
+        }
+
+        .team-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        .team-item:last-child {
+            border-bottom: none;
+        }
+
+        .team-flag {
+            font-size: 1.4rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-weight: 600;
+            flex-grow: 1;
+        }
+
+        .team-status {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background-color: #2d3748;
+            color: var(--text-muted);
+        }
+
+        .team-status.favorite {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .calendar {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 60px;
+        }
+
+        .match-day {
+            margin-bottom: 35px;
+        }
+
+        .match-day:last-child {
+            margin-bottom: 0;
+        }
+
+        .match-day-title {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .match-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        .match-row:last-child {
+            border-bottom: none;
+        }
+
+        .match-team {
+            display: flex;
+            align-items: center;
+        }
+
+        .match-team.home { justify-content: flex-end; text-align: right; }
+        .match-team.away { justify-content: flex-start; text-align: left; }
+
+        .match-team.home .team-flag { margin-right: 0; margin-left: 15px; }
+
+        .match-details {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .match-vs {
+            font-weight: 700;
+            background-color: #2d3748;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        .match-info {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title">Solo <span>Subbuteo</span></div>
+        <a href="index.html" class="nav-back">← Torna alla Home dell'Archivio</a>
+    </header>
+
+    <div class="container">
+        
+        <div class="hero">
+            <span class="badge-live">In Corso</span>
+            <h1>Coppa del Baltico</h1>
+            <p>La prima storica edizione dell'Europeo del Nord sul panno verde. 8 nazionali si sfidano in condizioni invernali estreme per decretare la Regina del Mar Baltico.</p>
+        </div>
+
+        <h2 class="section-title">Composizione dei Gironi</h2>
+        <div class="grid-groups">
+            
+            <!-- GRUPPO A -->
+            <div class="group-card a">
+                <h3>Gruppo A <span class="meta">Fronte d'Acciaio</span></h3><p class="meta">Sede: Estonia</p>
+                <ul class="team-list">
+                    <li class="team-item">
+                        <span class="team-flag">🇩🇪</span>
+                        <span class="team-name">🇩🇪 Germania</span>
+                        <span class="team-status favorite">Favorito</span>
+                    </li>
+                    <li class="team-item">
+                        <span class="team-flag">🇵🇱</span>
+                        <span class="team-name">🇵🇱 Polonia</span>
+                        <span class="team-status">Sfidante</span>
+                    </li>
+                    <li class="team-item">
+                        <span class="team-flag">🇱🇻</span>
+                        <span class="team-name">🇱🇻 Lettonia</span>
+                        <span class="team-status">Underdog</span>
+                    </li>
+                    <li class="team-item">
+                        <span class="team-flag">🇪🇪</span>
+                        <span class="team-name">🇪🇪 Estonia</span>
+                        <span class="team-status">Casa</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- GRUPPO B -->
+            <div class="group-card b">
+                <h3>Gruppo B <span class="meta">Anello Vichingo</span></h3><p class="meta">Sede: Finlandia</p>
+                <ul class="team-list">
+                    <li class="team-item">
+                        <span class="team-flag">🇩🇰</span>
+                        <span class="team-name">🇩🇰 Danimarca</span>
+                        <span class="team-status favorite">Favorito</span>
+                    </li>
+                    <li class="team-item">
+                        <span class="team-flag">🇸🇪</span>
+                        <span class="team-name">🇸🇪 Svezia</span>
+                        <span class="team-status">Sfidante</span>
+                    </li>
+                    <li class="team-item">
+                        <span class="team-flag">🇫🇮</span>
+                        <span class="team-name">🇫🇮 Finlandia</span>
+                        <span class="team-status">Casa</span>
+                    </li>
+                    <li class="team-item">
+                        <span class="team-flag">🇱🇹</span>
+                        <span class="team-name">🇱🇹 Lituania</span>
+                        <span class="team-status">Underdog</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <h2 class="section-title">Calendario</h2>
+        <div class="calendar">
+            <div class="match-day">
+                <div class="match-day-title">1ª Giornata</div>
+                <div class="match-row"><div class="match-team home"><span>🇩🇪 Germania</span><span class="team-flag">🇩🇪</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇪🇪</span><span>🇪🇪 Estonia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇵🇱 Polonia</span><span class="team-flag">🇵🇱</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇱🇻</span><span>🇱🇻 Lettonia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇩🇰 Danimarca</span><span class="team-flag">🇩🇰</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇱🇹</span><span>🇱🇹 Lituania</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇸🇪 Svezia</span><span class="team-flag">🇸🇪</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇫🇮</span><span>🇫🇮 Finlandia</span></div></div>
+            </div>
+            <div class="match-day">
+                <div class="match-day-title">2ª Giornata</div>
+                <div class="match-row"><div class="match-team home"><span>🇩🇪 Germania</span><span class="team-flag">🇩🇪</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇱🇻</span><span>🇱🇻 Lettonia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇪🇪 Estonia</span><span class="team-flag">🇪🇪</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇵🇱</span><span>🇵🇱 Polonia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇩🇰 Danimarca</span><span class="team-flag">🇩🇰</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇫🇮</span><span>🇫🇮 Finlandia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇱🇹 Lituania</span><span class="team-flag">🇱🇹</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇸🇪</span><span>🇸🇪 Svezia</span></div></div>
+            </div>
+            <div class="match-day">
+                <div class="match-day-title">3ª Giornata</div>
+                <div class="match-row"><div class="match-team home"><span>🇩🇪 Germania</span><span class="team-flag">🇩🇪</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇵🇱</span><span>🇵🇱 Polonia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇱🇻 Lettonia</span><span class="team-flag">🇱🇻</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇪🇪</span><span>🇪🇪 Estonia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇩🇰 Danimarca</span><span class="team-flag">🇩🇰</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇸🇪</span><span>🇸🇪 Svezia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>🇫🇮 Finlandia</span><span class="team-flag">🇫🇮</span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag">🇱🇹</span><span>🇱🇹 Lituania</span></div></div>
+            </div>
+        </div>
+    </div>
+    <footer>Solo Subbuteo · Coppa del Baltico </footer>
+
+<script>
+const stadiums = {"Germania – Estonia": "A. Le Coq Arena, Tallinn", "Polonia – Lettonia": "Kadriorg Stadium, Tallinn", "Danimarca – Lituania": "Helsinki Olympic Stadium, Helsinki", "Svezia – Finlandia": "Helsinki Olympic Stadium, Helsinki", "Germania – Lettonia": "A. Le Coq Arena, Tallinn", "Estonia – Polonia": "Kadriorg Stadium, Tallinn", "Danimarca – Finlandia": "Helsinki Olympic Stadium, Helsinki", "Lituania – Svezia": "Helsinki Olympic Stadium, Helsinki", "Germania – Polonia": "A. Le Coq Arena, Tallinn", "Lettonia – Estonia": "Kadriorg Stadium, Tallinn", "Danimarca – Svezia": "Helsinki Olympic Stadium, Helsinki", "Finlandia – Lituania": "Helsinki Olympic Stadium, Helsinki"};
+document.querySelectorAll('.match-row').forEach(row => {
+  const text = row.innerText.replace(/\s+/g, ' ').trim();
+  Object.entries(stadiums).forEach(([match, stadium]) => {
+    const teams = match.split(' – ');
+    if (text.includes(teams[0]) && text.includes(teams[1]) && !row.innerHTML.includes('Stadio:')) {
+      const details = row.querySelector('.match-details');
+      if (details) details.insertAdjacentHTML('beforeend', '<span class="match-info">Stadio: ' + stadium + '</span>');
+    }
+  });
+});
+</script>
+</body>
+</html>
