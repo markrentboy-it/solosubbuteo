@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Coppa del Baltico — gironi, calendario e sedi del torneo nordico di Solo Subbuteo.">
+    <meta name="description" content="Coppa del Baltico — girone all'italiana tra Lettonia, Estonia, Lituania e una nazionale wild card, su Solo Subbuteo.">
     <title>Coppa del Baltico | Solo Subbuteo</title>
     <style>
         :root {
@@ -15,8 +15,6 @@
             --w: #f4f5f2;
             --m: #aeb7b2;
             --l: #2a322f;
-            --group-a: var(--gold);
-            --group-b: #6bc9a5;
         }
 
         * {
@@ -102,7 +100,7 @@
 
         .hero p {
             color: var(--m);
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto;
         }
 
@@ -169,10 +167,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: var(--gold);
         }
-
-        .group-card.a h3 { color: var(--group-a); }
-        .group-card.b h3 { color: var(--group-b); }
 
         .group-card .meta {
             font-size: 0.8rem;
@@ -230,6 +226,12 @@
             background-color: rgba(233, 195, 74, 0.15);
             color: var(--gold);
             border: 1px solid rgba(233, 195, 74, 0.3);
+        }
+
+        .team-status.wildcard {
+            background-color: rgba(107, 201, 165, 0.15);
+            color: #6bc9a5;
+            border: 1px solid rgba(107, 201, 165, 0.3);
         }
 
         .calendar {
@@ -321,107 +323,67 @@
         <div class="hero">
             <span class="badge-live">In Corso</span>
             <h1>Coppa del Baltico</h1>
-            <p>La prima storica edizione dell'Europeo del Nord sul panno verde. 8 nazionali si sfidano in condizioni invernali estreme per decretare la Regina del Mar Baltico.</p>
+            <p>Le tre nazionali baltiche, Lettonia, Estonia e Lituania, si sfidano in un girone all'italiana insieme a una prestigiosa nazionale wild card: l'Islanda, invitata a completare il quadrangolare.</p>
             <div class="flag-strip">
-                <span><img src="https://flagcdn.com/w40/de.png" alt="Germania">Germania</span>
-                <span><img src="https://flagcdn.com/w40/pl.png" alt="Polonia">Polonia</span>
                 <span><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia">Lettonia</span>
                 <span><img src="https://flagcdn.com/w40/ee.png" alt="Estonia">Estonia</span>
-                <span><img src="https://flagcdn.com/w40/dk.png" alt="Danimarca">Danimarca</span>
-                <span><img src="https://flagcdn.com/w40/se.png" alt="Svezia">Svezia</span>
-                <span><img src="https://flagcdn.com/w40/fi.png" alt="Finlandia">Finlandia</span>
                 <span><img src="https://flagcdn.com/w40/lt.png" alt="Lituania">Lituania</span>
+                <span><img src="https://flagcdn.com/w40/is.png" alt="Islanda">Islanda</span>
             </div>
         </div>
 
-        <h2 class="section-title">Composizione dei Gironi</h2>
+        <h2 class="section-title">Nazionali in Gara</h2>
         <div class="grid-groups">
-
-            <!-- GRUPPO A -->
-            <div class="group-card a">
-                <h3>Gruppo A <span class="meta">Fronte d'Acciaio</span></h3><p class="meta">Sede: Estonia</p>
+            <div class="group-card" style="grid-column: 1 / -1">
+                <h3>Girone Unico <span class="meta">All'italiana · andata secca</span></h3>
                 <ul class="team-list">
-                    <li class="team-item">
-                        <span class="team-flag"><img src="https://flagcdn.com/w40/de.png" alt="Germania"></span>
-                        <span class="team-name">Germania</span>
-                        <span class="team-status favorite">Favorito</span>
-                    </li>
-                    <li class="team-item">
-                        <span class="team-flag"><img src="https://flagcdn.com/w40/pl.png" alt="Polonia"></span>
-                        <span class="team-name">Polonia</span>
-                        <span class="team-status">Sfidante</span>
-                    </li>
                     <li class="team-item">
                         <span class="team-flag"><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia"></span>
                         <span class="team-name">Lettonia</span>
-                        <span class="team-status">Underdog</span>
+                        <span class="team-status favorite">Favorito</span>
                     </li>
                     <li class="team-item">
                         <span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span>
                         <span class="team-name">Estonia</span>
                         <span class="team-status">Casa</span>
                     </li>
-                </ul>
-            </div>
-
-            <!-- GRUPPO B -->
-            <div class="group-card b">
-                <h3>Gruppo B <span class="meta">Anello Vichingo</span></h3><p class="meta">Sede: Finlandia</p>
-                <ul class="team-list">
-                    <li class="team-item">
-                        <span class="team-flag"><img src="https://flagcdn.com/w40/dk.png" alt="Danimarca"></span>
-                        <span class="team-name">Danimarca</span>
-                        <span class="team-status favorite">Favorito</span>
-                    </li>
-                    <li class="team-item">
-                        <span class="team-flag"><img src="https://flagcdn.com/w40/se.png" alt="Svezia"></span>
-                        <span class="team-name">Svezia</span>
-                        <span class="team-status">Sfidante</span>
-                    </li>
-                    <li class="team-item">
-                        <span class="team-flag"><img src="https://flagcdn.com/w40/fi.png" alt="Finlandia"></span>
-                        <span class="team-name">Finlandia</span>
-                        <span class="team-status">Casa</span>
-                    </li>
                     <li class="team-item">
                         <span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span>
                         <span class="team-name">Lituania</span>
-                        <span class="team-status">Underdog</span>
+                        <span class="team-status">Sfidante</span>
+                    </li>
+                    <li class="team-item">
+                        <span class="team-flag"><img src="https://flagcdn.com/w40/is.png" alt="Islanda"></span>
+                        <span class="team-name">Islanda</span>
+                        <span class="team-status wildcard">Wild Card</span>
                     </li>
                 </ul>
             </div>
-
         </div>
 
         <h2 class="section-title">Calendario</h2>
         <div class="calendar">
             <div class="match-day">
                 <div class="match-day-title">1ª Giornata</div>
-                <div class="match-row"><div class="match-team home"><span>Germania</span><span class="team-flag"><img src="https://flagcdn.com/w40/de.png" alt="Germania"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span><span>Estonia</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Polonia</span><span class="team-flag"><img src="https://flagcdn.com/w40/pl.png" alt="Polonia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia"></span><span>Lettonia</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Danimarca</span><span class="team-flag"><img src="https://flagcdn.com/w40/dk.png" alt="Danimarca"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span><span>Lituania</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Svezia</span><span class="team-flag"><img src="https://flagcdn.com/w40/se.png" alt="Svezia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/fi.png" alt="Finlandia"></span><span>Finlandia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>Lettonia</span><span class="team-flag"><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/is.png" alt="Islanda"></span><span>Islanda</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>Estonia</span><span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span><span>Lituania</span></div></div>
             </div>
             <div class="match-day">
                 <div class="match-day-title">2ª Giornata</div>
-                <div class="match-row"><div class="match-team home"><span>Germania</span><span class="team-flag"><img src="https://flagcdn.com/w40/de.png" alt="Germania"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia"></span><span>Lettonia</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Estonia</span><span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/pl.png" alt="Polonia"></span><span>Polonia</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Danimarca</span><span class="team-flag"><img src="https://flagcdn.com/w40/dk.png" alt="Danimarca"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/fi.png" alt="Finlandia"></span><span>Finlandia</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Lituania</span><span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/se.png" alt="Svezia"></span><span>Svezia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>Lettonia</span><span class="team-flag"><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span><span>Lituania</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>Islanda</span><span class="team-flag"><img src="https://flagcdn.com/w40/is.png" alt="Islanda"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span><span>Estonia</span></div></div>
             </div>
             <div class="match-day">
                 <div class="match-day-title">3ª Giornata</div>
-                <div class="match-row"><div class="match-team home"><span>Germania</span><span class="team-flag"><img src="https://flagcdn.com/w40/de.png" alt="Germania"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/pl.png" alt="Polonia"></span><span>Polonia</span></div></div>
                 <div class="match-row"><div class="match-team home"><span>Lettonia</span><span class="team-flag"><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span><span>Estonia</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Danimarca</span><span class="team-flag"><img src="https://flagcdn.com/w40/dk.png" alt="Danimarca"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/se.png" alt="Svezia"></span><span>Svezia</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Finlandia</span><span class="team-flag"><img src="https://flagcdn.com/w40/fi.png" alt="Finlandia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span><span>Lituania</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>Lituania</span><span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/is.png" alt="Islanda"></span><span>Islanda</span></div></div>
             </div>
         </div>
     </div>
     <footer>Solo Subbuteo · Coppa del Baltico</footer>
 
 <script>
-const stadiums = {"Germania – Estonia": "A. Le Coq Arena, Tallinn (Estonia)", "Polonia – Lettonia": "Kadriorg Stadium, Tallinn (Estonia)", "Danimarca – Lituania": "Helsinki Olympic Stadium, Helsinki (Finlandia)", "Svezia – Finlandia": "Tammela Stadion, Tampere (Finlandia)", "Germania – Lettonia": "A. Le Coq Arena, Tallinn (Estonia)", "Estonia – Polonia": "Kadriorg Stadium, Tallinn (Estonia)", "Danimarca – Finlandia": "Helsinki Olympic Stadium, Helsinki (Finlandia)", "Lituania – Svezia": "Tammela Stadion, Tampere (Finlandia)", "Germania – Polonia": "A. Le Coq Arena, Tallinn (Estonia)", "Lettonia – Estonia": "Kadriorg Stadium, Tallinn (Estonia)", "Danimarca – Svezia": "Helsinki Olympic Stadium, Helsinki (Finlandia)", "Finlandia – Lituania": "Tammela Stadion, Tampere (Finlandia)"};
+const stadiums = {"Lettonia – Islanda": "Daugava Stadionas, Riga (Lettonia)", "Estonia – Lituania": "Kadriorg Stadium, Tallinn (Estonia)", "Lettonia – Lituania": "LFF Stadionas, Vilnius (Lituania)", "Islanda – Estonia": "Daugava Stadionas, Riga (Lettonia)", "Lettonia – Estonia": "Kadriorg Stadium, Tallinn (Estonia)", "Lituania – Islanda": "LFF Stadionas, Vilnius (Lituania)"};
 document.querySelectorAll('.match-row').forEach(row => {
   const text = row.innerText.replace(/\s+/g, ' ').trim();
   Object.entries(stadiums).forEach(([match, stadium]) => {
