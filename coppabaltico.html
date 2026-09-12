@@ -355,6 +355,7 @@
                     <li class="team-item">
                         <span class="team-flag"><img src="https://flagcdn.com/w40/is.png" alt="Islanda"></span>
                         <span class="team-name">Islanda</span>
+                        <span class="team-status favorite">Favorita</span>
                         <span class="team-status wildcard">Wild Card</span>
                     </li>
                 </ul>
@@ -371,7 +372,7 @@
             <div class="match-day">
                 <div class="match-day-title">2ª Giornata</div>
                 <div class="match-row"><div class="match-team home"><span>Lettonia</span><span class="team-flag"><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span><span>Lituania</span></div></div>
-                <div class="match-row"><div class="match-team home"><span>Islanda</span><span class="team-flag"><img src="https://flagcdn.com/w40/is.png" alt="Islanda"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span><span>Estonia</span></div></div>
+                <div class="match-row"><div class="match-team home"><span>Estonia</span><span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span></div><div class="match-details"><span class="match-vs">VS</span></div><div class="match-team away"><span class="team-flag"><img src="https://flagcdn.com/w40/is.png" alt="Islanda"></span><span>Islanda</span></div></div>
             </div>
             <div class="match-day">
                 <div class="match-day-title">3ª Giornata</div>
@@ -383,7 +384,7 @@
     <footer>Solo Subbuteo · Coppa del Baltico</footer>
 
 <script>
-const stadiums = {"Lettonia – Islanda": "Daugava Stadionas, Riga (Lettonia)", "Estonia – Lituania": "Kadriorg Stadium, Tallinn (Estonia)", "Lettonia – Lituania": "LFF Stadionas, Vilnius (Lituania)", "Islanda – Estonia": "Kadriorg Stadium, Tallinn (Estonia)", "Lettonia – Estonia": "Kadriorg Stadium, Tallinn (Estonia)", "Lituania – Islanda": "LFF Stadionas, Vilnius (Lituania)"};
+const stadiums = {"Lettonia – Islanda": "Daugava Stadionas, Riga (Lettonia)", "Estonia – Lituania": "Kadriorg Stadium, Tallinn (Estonia)", "Lettonia – Lituania": "LFF Stadionas, Vilnius (Lituania)", "Estonia – Islanda": "Kadriorg Stadium, Tallinn (Estonia)", "Lettonia – Estonia": "Kadriorg Stadium, Tallinn (Estonia)", "Lituania – Islanda": "LFF Stadionas, Vilnius (Lituania)"};
 document.querySelectorAll('.match-row').forEach(row => {
   const text = row.innerText.replace(/\s+/g, ' ').trim();
   Object.entries(stadiums).forEach(([match, stadium]) => {
