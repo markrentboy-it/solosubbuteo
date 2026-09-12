@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L'epoca d'oro del Subbuteo: gli anni '60-'80, i Mondiali Subbuteo, i cataloghi Waddingtons e l'esplosione del collezionismo.">
+    <title>L'Epoca d'Oro | Solo Subbuteo</title>
+    <style>
+        :root {
+            --g: #176b39;
+            --g2: #23864b;
+            --d: #0d1110;
+            --c: #171c1a;
+            --gold: #e9c34a;
+            --w: #f4f5f2;
+            --m: #aeb7b2;
+            --l: #2a322f;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--d);
+            color: var(--w);
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background-color: rgba(13,17,16,.96);
+            border-bottom: 1px solid var(--l);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .header-title span {
+            color: var(--gold);
+        }
+
+        .nav-back {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--m);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: var(--w);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+            background: radial-gradient(circle at center, rgba(233,195,74,.25), transparent 60%), linear-gradient(135deg, #171c1a 0%, #0d1110 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--l);
+        }
+
+        .hero span.badge-live {
+            background-color: var(--gold);
+            color: #111;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            color: var(--m);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            border-left: 5px solid var(--g2);
+            padding-left: 15px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .article-card {
+            background-color: var(--c);
+            border-radius: 10px;
+            border: 1px solid var(--l);
+            padding: 26px 28px;
+            margin-bottom: 30px;
+        }
+
+        .article-card p {
+            margin-bottom: 14px;
+        }
+
+        .article-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-card strong {
+            color: var(--gold);
+        }
+
+        .timeline {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .timeline li {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 18px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--l);
+        }
+
+        .timeline li:last-child {
+            border-bottom: none;
+        }
+
+        .timeline .year {
+            font-weight: 800;
+            color: var(--gold);
+            font-size: 1.05rem;
+        }
+
+        .timeline .desc {
+            color: var(--m);
+        }
+
+        .timeline .desc strong {
+            color: var(--w);
+        }
+
+        .curiosita-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .curiosita-card {
+            background-color: var(--c);
+            border: 1px solid var(--l);
+            border-radius: 10px;
+            padding: 20px;
+            transition: .25s;
+        }
+
+        .curiosita-card:hover {
+            border-color: var(--g2);
+        }
+
+        .curiosita-card .icon {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .curiosita-card h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--gold);
+        }
+
+        .curiosita-card p {
+            color: var(--m);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .quote {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: #d6dbd8;
+            border-left: 3px solid var(--gold);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--m);
+            border-top: 1px solid var(--l);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title">Solo <span>Subbuteo</span></div>
+        <a href="index.html" class="nav-back">← Torna alla Home dell'Archivio</a>
+    </header>
+
+    <div class="container">
+
+        <div class="hero">
+            <span class="badge-live">Storia</span>
+            <h1>L'Epoca d'Oro</h1>
+            <p>Dagli anni '60 agli anni '80: quando il Subbuteo smise di essere un semplice giocattolo e diventò un fenomeno di massa, uno sport a tutti gli effetti e un piccolo universo da collezionare.</p>
+        </div>
+
+        <h2 class="section-title">Da hobby a fenomeno globale</h2>
+        <div class="article-card">
+            <p>Se gli anni '40 e '50 furono il periodo della nascita e del consolidamento, è tra gli anni <strong>Sessanta e Ottanta</strong> che il Subbuteo vive la sua stagione più luminosa. Le squadre di cartone dei primi tempi lasciano definitivamente il posto a <strong>omini tridimensionali in plastica</strong>, dipinti a mano rifinitura dopo rifinitura, mentre il campo da gioco si trasforma da coperta militare a un vero e proprio panno verde stampato, con tanto di righe, aree di rigore e dischetto del rigore.</p>
+            <p>La società inglese <strong>Subbuteo Sports Games</strong>, passata nel frattempo sotto il controllo del gruppo <strong>Waddingtons</strong>, moltiplica il catalogo: oltre al calcio arrivano varianti come il rugby, il cricket, l'hockey su prato e persino le corse di cavalli, ma è il calcio a restare sempre il cuore pulsante del marchio.</p>
+        </div>
+
+        <h2 class="section-title">I Mondiali e i tornei ufficiali</h2>
+        <div class="article-card">
+            <p>È in questi decenni che nasce il circuito competitivo strutturato: dal 1979 si disputano i <strong>Campionati del Mondo di Subbuteo</strong> (World Cup), che porteranno il gioco a essere riconosciuto come vera disciplina sportiva, con tanto di federazioni nazionali e la <strong>FISTF</strong> (Federation of International Sports Table Football) a livello internazionale.</p>
+            <p>I giocatori più forti sviluppano tecniche di tiro sempre più raffinate — il classico "flick" con le dita — e le regole si standardizzano: dimensioni del panno, peso e diametro della palla, altezza massima delle basi degli omini.</p>
+        </div>
+
+        <h2 class="section-title">Tappe dell'epoca d'oro</h2>
+        <ul class="timeline">
+            <li>
+                <span class="year">1961</span>
+                <span class="desc">Le squadre in cartone vengono definitivamente sostituite da <strong>omini tridimensionali in plastica rigida</strong>, dipinti a mano.</span>
+            </li>
+            <li>
+                <span class="year">1967</span>
+                <span class="desc">Il marchio passa sotto il controllo del gruppo <strong>Waddingtons</strong>, che ne rilancia la produzione e la distribuzione internazionale.</span>
+            </li>
+            <li>
+                <span class="year">Anni '70</span>
+                <span class="desc">Boom del collezionismo: il catalogo arriva a contare <strong>centinaia di squadre nazionali e di club</strong> riprodotte fedelmente nelle divise reali, aggiornate stagione dopo stagione.</span>
+            </li>
+            <li>
+                <span class="year">1971</span>
+                <span class="desc">Il Subbuteo sbarca ufficialmente in <strong>Italia</strong>, dando il via a una delle community di giocatori e collezionisti più appassionate d'Europa.</span>
+            </li>
+            <li>
+                <span class="year">1979</span>
+                <span class="desc">Prima edizione dei <strong>Campionati del Mondo di Subbuteo</strong>, che consacrano il gioco come disciplina sportiva competitiva riconosciuta a livello internazionale.</span>
+            </li>
+            <li>
+                <span class="year">Anni '80</span>
+                <span class="desc">Massima espansione commerciale: nuove linee di accessori (tribune, riflettori, pullman delle squadre, arbitri e guardalinee) rendono il "mondo Subbuteo" sempre più immersivo.</span>
+            </li>
+        </ul>
+
+        <h2 class="section-title">Un'estetica riconoscibile</h2>
+        <div class="article-card">
+            <p>È in questo periodo che si definisce l'immaginario collettivo del Subbuteo: le scatole con l'illustrazione del calciatore in azione sul panno verde, le buste di squadre "Continental" con le divise delle nazionali e dei grandi club europei, gli accessori da stadio in miniatura che trasformano il tavolo di casa in un piccolo San Siro o Wembley.</p>
+            <p>Per un'intera generazione di ragazzi, aprire una nuova bustina di squadre diventa un piccolo rito, non troppo diverso da quello delle figurine Panini che in quegli stessi anni conquistavano l'Italia.</p>
+        </div>
+
+        <p class="quote">Tra gli anni '70 e '80 il Subbuteo non è più soltanto un gioco da tavolo: è un vero e proprio rito del sabato pomeriggio, capace di riunire intere famiglie attorno a un panno verde steso sul tavolo della cucina.</p>
+
+        <h2 class="section-title">Curiosità dell'epoca</h2>
+        <div class="curiosita-grid">
+            <div class="curiosita-card">
+                <div class="icon">🎨</div>
+                <h3>Dipinte a mano</h3>
+                <p>Fino all'automazione degli anni '80, le divise delle squadre venivano rifinite a mano, rendendo ogni omino leggermente diverso dall'altro.</p>
+            </div>
+            <div class="curiosita-card">
+                <div class="icon">🌍</div>
+                <h3>Un catalogo sterminato</h3>
+                <p>Negli anni '70 il catalogo Subbuteo arrivò a includere centinaia di squadre, dalle nazionali più famose a club di provincia praticamente sconosciuti.</p>
+            </div>
+            <div class="curiosita-card">
+                <div class="icon">🏟️</div>
+                <h3>Lo stadio in miniatura</h3>
+                <p>Tribune, riflettori, tabelloni pubblicitari e persino i pullman delle squadre: gli accessori resero il tavolo di casa un vero stadio in scala.</p>
+            </div>
+            <div class="curiosita-card">
+                <div class="icon">🏆</div>
+                <h3>Nasce lo sport competitivo</h3>
+                <p>Con i primi Mondiali del 1979, il Subbuteo smette di essere solo un gioco per ragazzi e diventa una disciplina sportiva con regole codificate.</p>
+            </div>
+        </div>
+
+    </div>
+    <footer>Solo Subbuteo · L'Epoca d'Oro</footer>
+
+</body>
+</html>

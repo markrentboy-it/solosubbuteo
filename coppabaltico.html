@@ -340,12 +340,12 @@
                     <li class="team-item">
                         <span class="team-flag"><img src="https://flagcdn.com/w40/lv.png" alt="Lettonia"></span>
                         <span class="team-name">Lettonia</span>
-                        <span class="team-status favorite">Favorito</span>
+                        <span class="team-status">Sfidante</span>
                     </li>
                     <li class="team-item">
                         <span class="team-flag"><img src="https://flagcdn.com/w40/ee.png" alt="Estonia"></span>
                         <span class="team-name">Estonia</span>
-                        <span class="team-status">Casa</span>
+                        <span class="team-status">Sfidante</span>
                     </li>
                     <li class="team-item">
                         <span class="team-flag"><img src="https://flagcdn.com/w40/lt.png" alt="Lituania"></span>
@@ -383,7 +383,7 @@
     <footer>Solo Subbuteo · Coppa del Baltico</footer>
 
 <script>
-const stadiums = {"Lettonia – Islanda": "Daugava Stadionas, Riga (Lettonia)", "Estonia – Lituania": "Kadriorg Stadium, Tallinn (Estonia)", "Lettonia – Lituania": "LFF Stadionas, Vilnius (Lituania)", "Islanda – Estonia": "Daugava Stadionas, Riga (Lettonia)", "Lettonia – Estonia": "Kadriorg Stadium, Tallinn (Estonia)", "Lituania – Islanda": "LFF Stadionas, Vilnius (Lituania)"};
+const stadiums = {"Lettonia – Islanda": "Daugava Stadionas, Riga (Lettonia)", "Estonia – Lituania": "Kadriorg Stadium, Tallinn (Estonia)", "Lettonia – Lituania": "LFF Stadionas, Vilnius (Lituania)", "Islanda – Estonia": "Kadriorg Stadium, Tallinn (Estonia)", "Lettonia – Estonia": "Kadriorg Stadium, Tallinn (Estonia)", "Lituania – Islanda": "LFF Stadionas, Vilnius (Lituania)"};
 document.querySelectorAll('.match-row').forEach(row => {
   const text = row.innerText.replace(/\s+/g, ' ').trim();
   Object.entries(stadiums).forEach(([match, stadium]) => {
